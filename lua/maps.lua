@@ -13,6 +13,7 @@ vim.api.nvim_set_keymap('n', '<Leader>p', '"+p', { noremap = true })
 
 -- Exit Termianl mode
 vim.cmd [[ tnoremap <C-p> <C-\><C-n> ]]
+vim.cmd [[ tnoremap <Esc> <C-\><C-n> ]]
 
 -- Clear search buffer
 vim.cmd [[command! ClearSearch let @/ = ""]]
