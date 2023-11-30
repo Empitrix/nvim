@@ -1,0 +1,7 @@
+-- print("Neovide")
+-- -- #001B26
+-- -- #001017
+-- vim.g.transparency = 0.8
+-- vim.g.transparency = 1
+-- vim.g.neovide_background_color = "#ffffff"
+-- vim.g.neovide_transparency = 0.8
