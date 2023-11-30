@@ -20,6 +20,10 @@ keymap.set('t', '<Esc>', '<C-\\><C-n>', opts)
 vim.cmd [[command! ClearSearch let @/ = ""]]
 keymap.set('n', '<Leader>cs', '<cmd>let @/ = ""<cr>', opts)
 
+-- Retab all: will retab all the indent from sapce to tab if noexpandtab
+vim.cmd [[command! RetabAll %retab!]]
+keymap.set('n', '<Leader>ta', '<cmd>%retab!<cr>', opts)
+
 -- Do not yank with x
 keymap.set('n', 'x', '"_x')
 
