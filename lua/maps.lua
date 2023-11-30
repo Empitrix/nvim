@@ -1,5 +1,6 @@
 local keymap = vim.keymap
 vim.g.mapleader = " "
+local opts = { noremap = false, silent = true }
 
 -- Movement in __INSERT__ mode
 keymap.set("i", "<C-j>", "<DOWN>")
@@ -8,15 +9,16 @@ keymap.set("i", "<C-l>", "<RIGHT>")
 keymap.set("i", "<C-h>", "<LEFT>")
 
 -- Copy && Paste
-vim.api.nvim_set_keymap('v', '<Leader>y', '"+y', { noremap = true })
-vim.api.nvim_set_keymap('n', '<Leader>p', '"+p', { noremap = true })
+vim.api.nvim_set_keymap('v', '<Leader>y', '"+y', opts)
+vim.api.nvim_set_keymap('n', '<Leader>p', '"+p', opts)
 
 -- Exit Termianl mode
-vim.cmd [[ tnoremap <C-p> <C-\><C-n> ]]
-vim.cmd [[ tnoremap <Esc> <C-\><C-n> ]]
+keymap.set('t', '<C-p>', '<C-\\><C-n>', opts)
+keymap.set('t', '<Esc>', '<C-\\><C-n>', opts)
 
--- Clear search buffer
+-- Clear search buffer: command & shortcut
 vim.cmd [[command! ClearSearch let @/ = ""]]
+keymap.set('n', '<Leader>cs', '<cmd>let @/ = ""<cr>', opts)
 
 -- Do not yank with x
 keymap.set('n', 'x', '"_x')
@@ -60,8 +62,11 @@ keymap.set('n', '<leader>k', '<C-w>+')
 keymap.set('n', '<leader>j', '<C-w>-')
 
 -- Move between tabs and creat/close them
-local opts = { noremap = false, silent = true }
-vim.api.nvim_set_keymap('n', '<leader>tn', ':tabnew<CR>', opts)
-vim.api.nvim_set_keymap('n', '<leader>tc', ':tabclose<CR>', opts)
-vim.api.nvim_set_keymap('n', '<leader>th', ':tabprevious<CR>', opts)
-vim.api.nvim_set_keymap('n', '<leader>tl', ':tabnext<CR>', opts)
+keymap.set('n', '<leader>tn', ':tabnew<CR>', opts)
+keymap.set('n', '<leader>tc', ':tabclose<CR>', opts)
+keymap.set('n', '<leader>th', ':tabprevious<CR>', opts)
+keymap.set('n', '<leader>tl', ':tabnext<CR>', opts)
+
+-- Move tabs postions (Right/Left)
+keymap.set('n', '<leader>ml', ':+tabmove<CR>', opts)
+keymap.set('n', '<leader>mh', ':-tabmove<CR>', opts)
