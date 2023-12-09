@@ -19,6 +19,20 @@ nvim_lsp.tsserver.setup {
   filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
   cmd = { "typescript-language-server", "--stdio" }
 }
+
+-- Rust
+nvim_lsp.rust_analyzer.setup {
+  settings = {
+    ['rust-analyzer'] = {
+      diagnostics = {
+        -- enable = false,
+        enable = true,
+      }
+    }
+  }
+}
+
+
 -- Python
 nvim_lsp.pyright.setup {
   on_attach = on_attach,
@@ -70,7 +84,7 @@ local signs = { Error = '󰅙 ', Warn = ' ', Hint = ' ', Info = ' ' }
 for type, icon in pairs(signs) do
   local hl = 'DiagnosticSign' .. type
   -- default: numhl = ''
-  vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
+  vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = '' })
 end
 
 -- Show dialgnostics on full-size
