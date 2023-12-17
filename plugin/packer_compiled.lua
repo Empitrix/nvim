@@ -1,4 +1,5 @@
 -- Automatically generated packer.nvim plugin loader code
+
 if vim.api.nvim_call_function('has', {'nvim-0.5'}) ~= 1 then
   vim.api.nvim_command('echohl WarningMsg | echom "Invalid Neovim version for packer.nvim! | echohl None"')
   return
@@ -117,6 +118,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "C:\\Users\\Empitrix\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\lspkind-nvim",
     url = "https://github.com/onsails/lspkind-nvim"
+  },
+  ["lspsaga.nvim"] = {
+    loaded = true,
+    path = "C:\\Users\\Empitrix\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\lspsaga.nvim",
+    url = "https://github.com/glepnir/lspsaga.nvim"
   },
   ["lualine.nvim"] = {
     loaded = true,

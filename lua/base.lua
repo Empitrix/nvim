@@ -44,5 +44,12 @@ vim.api.nvim_create_autocmd("InsertLeave", {
   command = "set nopaste"
 })
 
+-- Auto-command to turn off line numbers in terminal mode
+vim.cmd([[
+  autocmd TermOpen * setlocal nonumber
+  autocmd TermClose * setlocal number
+]])
+
+
 -- Add asterisks in block comments
 vim.opt.formatoptions:append { 'r' }

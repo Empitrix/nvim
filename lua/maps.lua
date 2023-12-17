@@ -74,3 +74,6 @@ keymap.set('n', '<leader>tl', ':tabnext<CR>', opts)
 -- Move tabs postions (Right/Left)
 keymap.set('n', '<leader>ml', ':+tabmove<CR>', opts)
 keymap.set('n', '<leader>mh', ':-tabmove<CR>', opts)
+
+-- Open a terminal
+keymap.set('n', '<leader>T', ':tabnew Terminal<CR>:terminal<CR>', opts)
