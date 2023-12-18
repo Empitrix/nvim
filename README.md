@@ -17,3 +17,7 @@ Windows (Powershell):
 git clone https://github.com/wbthomason/packer.nvim "$env:LOCALAPPDATA\nvim-data\site\pack\packer\start\packer.nvim"
 ```
 - Source: [*Packer*](https://github.com/wbthomason/packer.nvim)
+
+
+## vimrc
+The content of `./vimrc` is for vscode vim configuration and shortcuts setup
