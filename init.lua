@@ -16,3 +16,5 @@ end
 if has "win32" then
   require("windows")
 end
+
+require("luasnip.loaders.from_vscode").lazy_load()

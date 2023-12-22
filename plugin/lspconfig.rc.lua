@@ -20,6 +20,32 @@ nvim_lsp.tsserver.setup {
   cmd = { "typescript-language-server", "--stdio" }
 }
 
+--Enable (broadcasting) snippet capability for completion
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.textDocument.completion.completionItem.snippetSupport = true
+
+require 'lspconfig'.html.setup {
+  capabilities = capabilities,
+}
+
+-- HTML Snippet (https://github.com/aca/emmet-ls)
+require 'lspconfig'.emmet_ls.setup({
+  -- on_attach = on_attach,
+  capabilities = capabilities,
+  -- filetypes = { "css", "eruby", "html", "javascript", "javascriptreact", "less", "sass", "scss", "svelte", "pug", "typescriptreact", "vue" },
+  filetypes = { "css", "html", "vue" },
+  init_options = {
+    html = {
+      options = {
+        -- For possible options, see: https://github.com/emmetio/emmet/blob/master/src/config.ts#L79-L267
+        ["bem.enabled"] = true,
+      },
+    },
+  }
+})
+
+
+
 -- Rust
 nvim_lsp.rust_analyzer.setup {
   settings = {

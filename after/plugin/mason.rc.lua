@@ -10,3 +10,4 @@ lspconfig.setup {
 }
 
 require 'lspconfig'.tailwindcss.setup {}
+require 'lspconfig'.html.setup {}
