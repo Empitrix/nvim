@@ -8,3 +8,4 @@ vim.opt.background = "dark"
 -- whitespace
 vim.opt.list = true
 vim.opt.listchars = "tab:󱦰 "
+-- vim.opt.listchars = "tab:▎󱦰"

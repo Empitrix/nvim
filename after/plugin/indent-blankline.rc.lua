@@ -1,4 +1,9 @@
-local stauts, indent_blankline = pcall(require, 'ibl')
+local stauts, ibl = pcall(require, 'ibl')
 if (not stauts) then return end
 
--- indent_blankline.setup()
+-- ibl.setup {
+--   -- indent = { char = "┠" },
+--   indent = { char = "▎", tab_char = "󱦰" },
+--   -- indent = { char = "󱦰" },
+-- }
+-- ibl.setup { scope = { enabled = true } }
