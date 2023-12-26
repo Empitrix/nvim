@@ -113,5 +113,20 @@ for type, icon in pairs(signs) do
   vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = '' })
 end
 
--- Show dialgnostics on full-size
-vim.keymap.set('n', '<C-l>', "<cmd>:lua vim.diagnostic.open_float()<cr>")
+-- See ':hi' in buffer for colors
+vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
+  vim.lsp.diagnostic.on_publish_diagnostics,
+  {
+    virtual_text = true,
+    signs = true,
+    update_in_insert = false, -- Good for performancep
+    underline = false,
+  }
+)
+
+-- Set virtual_text prefix icon
+vim.diagnostic.config({
+  virtual_text = {
+    prefix = " ",
+  },
+})

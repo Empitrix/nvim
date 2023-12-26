@@ -77,3 +77,6 @@ keymap.set('n', '<leader>mh', ':-tabmove<CR>', opts)
 
 -- Open a terminal
 keymap.set('n', '<leader>T', ':tabnew Terminal<CR>:terminal<CR>', opts)
+
+-- Show dialgnostics by a floting window (lspconfig)
+vim.keymap.set('n', '<C-l>', "<cmd>:lua vim.diagnostic.open_float()<cr>")

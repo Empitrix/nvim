@@ -21,3 +21,8 @@ git clone https://github.com/wbthomason/packer.nvim "$env:LOCALAPPDATA\nvim-data
 
 ## vimrc
 The content of `./vimrc` is for vscode vim configuration and shortcuts setup
+
+
+## Sources
+- [Takuya Matsuyama - Medium](https://blog.inkdrop.app/my-neovim-setup-for-react-typescript-tailwind-css-etc-in-2022-a7405862c9a4)
+

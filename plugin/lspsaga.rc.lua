@@ -8,6 +8,16 @@ if (not status) then return end
 --   infor_sign = '',
 -- }
 
+saga.setup {
+  error_sign = '󰅙 ',
+  warn_sign = ' ',
+  hint_sign = '',
+  infor_sign = '',
+  icons = {
+    code_action_icon = "" -- Removing annoying lightbulb icon
+  }
+}
+
 --
 -- -- saga.init_lsp_saga {
 -- saga.setup {
