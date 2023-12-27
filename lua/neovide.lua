@@ -3,7 +3,7 @@ local status, gruvbox = pcall(require, "gruvbox")
 if (not status) then return end
 
 
-vim.g.neovide_transparency = 0.8
+vim.g.neovide_transparency = 0.95
 vim.o.guifont = "FiraCode Nerd Font:h14"
 
 -- Floating Shadow
@@ -18,6 +18,27 @@ vim.g.neovide_floating_blur_amount_y = 2.0
 
 -- Gruvbox
 gruvbox.setup({
-  transparent_mode = false, -- Using default neovide transparency
+  terminal_colors = true, -- add neovim terminal colors
+  undercurl = true,
+  underline = true,
+  bold = false,      -- Don't bold any type of func etc...
+  italic = {
+    strings = false, -- default: true
+    emphasis = true,
+    comments = true,
+    operators = false,
+    folds = true,
+  },
+  strikethrough = true,
+  invert_selection = false,
+  invert_signs = false,
+  invert_tabline = false,
+  invert_intend_guides = false,
+  inverse = true, -- invert background for search, diffs, statuslines and errors
+  contrast = "",  -- can be "hard", "soft" or empty string
+  palette_overrides = {},
+  overrides = {},
+  dim_inactive = false,
+  transparent_mode = false, -- Using default neovide background transparency
 })
 -- Calling ../after/plugin/neovide.lua for theme setting

@@ -3,7 +3,8 @@ if (not status) then return end
 lualine.setup {
   options = {
     icons_enabled = true,
-    theme = 'solarized_dark',
+    -- theme = 'solarized_dark',
+    theme = vim.g.neovide ~= nil and 'gruvbox' or 'solarized_dark',
     section_separators = { left = '', right = '' },
     component_separators = { left = '', right = '' },
     disabled_filetypes = {}
@@ -11,11 +12,11 @@ lualine.setup {
   sections = {
     lualine_a = { 'mode' },
     lualine_b = { 'branch' },
-    lualine_c = {{
+    lualine_c = { {
       'filename',
-      file_status = true,  -- displays file status
-      path = 0 -- 0 = just filename
-    }},
+      file_status = true, -- displays file status
+      path = 0            -- 0 = just filename
+    } },
     lualine_x = {
       {
         'diagnostics',
@@ -36,11 +37,11 @@ lualine.setup {
   inactive_sections = {
     lualine_a = {},
     lualine_b = {},
-    lualine_c = {{
+    lualine_c = { {
       'filename',
       file_status = true,
       path = 1 -- 1 = relative path
-    }},
+    } },
     lualine_x = { 'location' },
     lualine_y = {},
     lualine_z = {}
@@ -48,4 +49,3 @@ lualine.setup {
   tabline = {},
   extensions = { 'fugitive' }
 }
-

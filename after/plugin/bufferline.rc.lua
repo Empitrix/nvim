@@ -1,6 +1,10 @@
 local status, bufferline = pcall(require, 'bufferline')
 if (not status) then return end
 
+-- Check for if it's neovide
+local isN = vim.g.neovide == nil
+
+print(isN)
 bufferline.setup {
   options = {
     mode = 'tabs',
@@ -12,22 +16,22 @@ bufferline.setup {
   },
   highlights = {
     separator = {
-      fg = "#073642",
-      bg = "#002b36"
+      fg = isN and "#073642" or "#A89984",
+      bg = isN and "#002b36" or "#504945"
     },
     separator_selected = {
-      fg = "#073642"
+      fg = isN and "#073642" or "#A89984"
     },
     background = {
-      fg = "#657b83",
-      bg = "#002b36"
+      fg = isN and "#657b83" or "#A89984",
+      bg = isN and "#002b36" or "#504945"
     },
     buffer_selected = {
       fg = "#fdf6e3",
       gui = "bold"
     },
     fill = {
-      bg = "#073642"
+      bg = isN and "#073642" or "#504945"
     }
   }
 }
