@@ -48,5 +48,7 @@ packer.startup(function(use)
 
   use "lukas-reineke/indent-blankline.nvim"
 
+  use "ellisonleao/gruvbox.nvim" -- Gruvbox (Neovide)
+
   -- use "gcmt/taboo.vim" -- Rename Tab
 end)

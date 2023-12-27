@@ -120,7 +120,7 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
     virtual_text = true,
     signs = true,
     update_in_insert = false, -- Good for performancep
-    underline = false,
+    underline = true,
   }
 )
 

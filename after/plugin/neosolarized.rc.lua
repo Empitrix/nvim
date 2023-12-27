@@ -5,6 +5,7 @@ if (not status) then return end
 n.setup({
   comment_italics = true,
   background_set = vim.g.neovide ~= nil
+  -- background_set = vim.g.neovide ~= nil
 })
 
 local colorbuddy = require('colorbuddy.init')
