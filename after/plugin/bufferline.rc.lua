@@ -4,7 +4,7 @@ if (not status) then return end
 -- Check for if it's neovide
 local isN = vim.g.neovide == nil
 
-print(isN)
+
 bufferline.setup {
   options = {
     mode = 'tabs',

@@ -80,3 +80,8 @@ keymap.set('n', '<leader>T', ':tabnew Terminal<CR>:terminal<CR>', opts)
 
 -- Show dialgnostics by a floting window (lspconfig)
 vim.keymap.set('n', '<C-l>', "<cmd>:lua vim.diagnostic.open_float()<cr>")
+
+
+-- Extend Selection
+keymap.set('n', '<leader>ha', '"_y[{V%', opts)
+-- Tip: for indent then you can use (v to come back one) and use > or < for indnet forward/backward
