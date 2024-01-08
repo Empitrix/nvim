@@ -23,8 +23,7 @@ nvim_lsp.tsserver.setup {
 --Enable (broadcasting) snippet capability for completion
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
-
-require 'lspconfig'.html.setup {
+nvim_lsp.html.setup {
   capabilities = capabilities,
 }
 
@@ -43,6 +42,23 @@ require 'lspconfig'.emmet_ls.setup({
     },
   }
 })
+
+
+
+-- function leave_snippet()
+--   if
+--       ((vim.v.event.old_mode == 's' and vim.v.event.new_mode == 'n') or vim.v.event.old_mode == 'i')
+--       and require('luasnip').session.current_nodes[vim.api.nvim_get_current_buf()]
+--       and not require('luasnip').session.jump_active
+--   then
+--     require('luasnip').unlink_current()
+--   end
+-- end
+--
+-- -- stop snippets when you leave to normal mode
+-- vim.api.nvim_command([[
+--     autocmd ModeChanged * lua leave_snippet()
+-- ]])
 
 
 

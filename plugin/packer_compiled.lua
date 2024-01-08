@@ -99,6 +99,11 @@ _G.packer_plugins = {
     path = "C:\\Users\\Empitrix\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\dressing.nvim",
     url = "https://github.com/stevearc/dressing.nvim"
   },
+  ["emmet-ls"] = {
+    loaded = true,
+    path = "C:\\Users\\Empitrix\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\emmet-ls",
+    url = "https://github.com/aca/emmet-ls"
+  },
   ["flutter-tools.nvim"] = {
     loaded = true,
     path = "C:\\Users\\Empitrix\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\flutter-tools.nvim",
@@ -218,6 +223,16 @@ _G.packer_plugins = {
     loaded = true,
     path = "C:\\Users\\Empitrix\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
+  },
+  ["vim-vsnip"] = {
+    loaded = true,
+    path = "C:\\Users\\Empitrix\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\vim-vsnip",
+    url = "https://github.com/hrsh7th/vim-vsnip"
+  },
+  ["vim-vsnip-integ"] = {
+    loaded = true,
+    path = "C:\\Users\\Empitrix\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\vim-vsnip-integ",
+    url = "https://github.com/hrsh7th/vim-vsnip-integ"
   }
 }
 

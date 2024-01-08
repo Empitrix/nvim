@@ -51,4 +51,12 @@ packer.startup(function(use)
   use "ellisonleao/gruvbox.nvim" -- Gruvbox (Neovide)
 
   -- use "gcmt/taboo.vim" -- Rename Tab
+  -- github suggestd issue for lsp html/css
+  use 'hrsh7th/vim-vsnip'
+  use 'hrsh7th/vim-vsnip-integ'
+
+  -- https://www.reddit.com/r/neovim/comments/12ov8rj/neovim_emmetls_issues/
+  use {             -- Configurations for Nvim LSPs
+    "aca/emmet-ls", -- Enable emmet LSP
+  }
 end)
