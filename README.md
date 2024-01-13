@@ -18,6 +18,11 @@ git clone https://github.com/wbthomason/packer.nvim "$env:LOCALAPPDATA\nvim-data
 ```
 - Source: [*Packer*](https://github.com/wbthomason/packer.nvim)
 
+## Plugins (Installation)
+```bash
+npm install -g @fsouza/prettierd
+```
+
 
 ## vimrc
 The content of `./vimrc` is for vscode vim configuration and shortcuts setup
