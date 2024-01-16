@@ -19,5 +19,12 @@ nnoremap <leader>tc :tabclose<CR>
 nnoremap <leader>th :tabprevious<CR>
 nnoremap <leader>tl :tabnext<CR>
 
+" VIM PLUGIN DON'T SUPPORT LET (NOT GOOD)
 " Exit from terminal focus
 tnoremap <C-p> <C-\><C-n>
+" Exit terminal mode with <Esc>
+tnoremap <Esc> <C-\><C-n>
+
+" Clear search buffer: command & shortcut
+command! ClearSearch let @/ = ""
+nnoremap <Leader>cs :let @/ = ""<CR>
