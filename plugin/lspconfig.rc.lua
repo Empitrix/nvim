@@ -28,11 +28,12 @@ nvim_lsp.html.setup {
 }
 
 -- HTML Snippet (https://github.com/aca/emmet-ls)
-require 'lspconfig'.emmet_ls.setup({
+nvim_lsp.emmet_ls.setup({
   -- on_attach = on_attach,
   capabilities = capabilities,
   -- filetypes = { "css", "eruby", "html", "javascript", "javascriptreact", "less", "sass", "scss", "svelte", "pug", "typescriptreact", "vue" },
-  filetypes = { "css", "html", "vue" },
+  -- filetypes = { "css", "html", "vue" },
+  filetypes = { "html", "vue" },
   init_options = {
     html = {
       options = {
@@ -43,6 +44,15 @@ require 'lspconfig'.emmet_ls.setup({
   }
 })
 
+
+-- css
+--Enable (broadcasting) snippet capability for completion
+-- local capabilities = vim.lsp.protocol.make_client_capabilities()
+-- capabilities.textDocument.completion.completionItem.snippetSupport = true
+-- same capabilities as html
+nvim_lsp.cssls.setup {
+  capabilities = capabilities,
+}
 
 
 -- function leave_snippet()

@@ -21,6 +21,7 @@ ts.setup {
     'lua',
     'json',
     'css',
+    'html',
     'python',
     -- 'dart'
   },
