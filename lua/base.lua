@@ -18,7 +18,7 @@ vim.opt.laststatus = 2
 -- override it for any languages in ./after/ftplugin/<lang>.vim
 vim.opt.expandtab = true
 vim.opt.scrolloff = 10
-vim.opt.shell = vim.fn.has('win32') and "pwsh" or "bash" -- cmd
+vim.opt.shell = vim.fn.has('win32') == 1 and "pwsh" or "bash" -- cmd
 vim.opt.backupskip = "/tmp/*,/private/tmp/*"
 vim.opt.inccommand = "split"
 vim.opt.ignorecase = true
