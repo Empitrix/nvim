@@ -33,7 +33,7 @@ nvim_lsp.emmet_ls.setup({
   capabilities = capabilities,
   -- filetypes = { "css", "eruby", "html", "javascript", "javascriptreact", "less", "sass", "scss", "svelte", "pug", "typescriptreact", "vue" },
   -- filetypes = { "css", "html", "vue" },
-  filetypes = { "html", "vue" },
+  filetypes = { "html", "htmldjango" },
   init_options = {
     html = {
       options = {
@@ -111,7 +111,7 @@ nvim_lsp.lua_ls.setup {
 
 -- Dart
 nvim_lsp.dartls.setup {
-  on_attach = on_attach,
+  -- on_attach = on_attach,
   cmd = { "dart", "language-server", "--protocol=lsp" },
   filetypes = { "dart" },
   init_options = {
