@@ -79,10 +79,16 @@ nvim_lsp.rust_analyzer.setup {
       diagnostics = {
         -- enable = false,
         enable = true,
-      }
+      },
+      -- completion = {
+      --   completionItem = {
+      --     snippetSupport = true
+      --   }
+      -- }
     }
   }
 }
+
 
 
 -- Python
