@@ -134,6 +134,14 @@ nvim_lsp.dartls.setup {
     }
   },
 }
+
+
+-- Java
+nvim_lsp.java_language_server.setup {}
+nvim_lsp.jdtls.setup {}
+
+
+
 -- vim.cmd [[ let g:loaded_syntastic_dart_dartanalyzer_checker = 0 ]]
 
 -- Apply icons
