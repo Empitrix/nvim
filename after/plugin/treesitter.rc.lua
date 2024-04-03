@@ -14,7 +14,7 @@ ts.setup {
   },
   indent = {
     enable = true,
-    disable = { "python" },
+    disable = { "python", "cpp" },
   },
   ensure_installed = {
     -- -- 'tsx',
