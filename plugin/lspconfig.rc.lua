@@ -23,6 +23,7 @@ nvim_lsp.tsserver.setup {
 --Enable (broadcasting) snippet capability for completion
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
+
 nvim_lsp.html.setup {
   capabilities = capabilities,
 }
@@ -137,8 +138,11 @@ nvim_lsp.dartls.setup {
 
 
 -- Java
-nvim_lsp.java_language_server.setup {}
-nvim_lsp.jdtls.setup {}
+-- nvim_lsp.java_language_server.setup {}
+--
+nvim_lsp.jdtls.setup {
+  capabilities = capabilities,
+}
 
 
 
