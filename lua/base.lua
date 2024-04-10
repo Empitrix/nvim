@@ -51,16 +51,16 @@ vim.cmd([[
 ]])
 
 
-vim.cmd([[
-  autocmd FileType c setlocal shiftwidth=2 tabstop=2 noexpandtab
-  autocmd FileType c set noexpandtab
-]])
-
-vim.api.nvim_command([[
-  autocmd FileType c set noexpandtab
-]])
-
-print("Auto cmd works loaded");
+-- vim.cmd([[
+--   autocmd FileType c setlocal shiftwidth=2 tabstop=2 noexpandtab
+--   autocmd FileType c set noexpandtab
+-- ]])
+--
+-- vim.api.nvim_command([[
+--   autocmd FileType c set noexpandtab
+-- ]])
+--
+-- print("Auto cmd works loaded");
 
 -- Add asterisks in block comments
 vim.opt.formatoptions:append { 'r' }
