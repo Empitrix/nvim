@@ -145,6 +145,12 @@ nvim_lsp.jdtls.setup {
 }
 
 
+-- C/C++
+-- nvim_lsp.ccls.setup {}
+nvim_lsp.clangd.setup {
+  capabilities = capabilities,
+}
+
 
 -- vim.cmd [[ let g:loaded_syntastic_dart_dartanalyzer_checker = 0 ]]
 

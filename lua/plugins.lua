@@ -59,4 +59,9 @@ packer.startup(function(use)
   use {             -- Configurations for Nvim LSPs
     "aca/emmet-ls", -- Enable emmet LSP
   }
+
+
+  -- C/C++
+  -- use 'p00f/clangd_extensions.nvim'
+  --
 end)
