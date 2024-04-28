@@ -146,6 +146,12 @@ nvim_lsp.jdtls.setup {
 }
 
 
+-- Kotlin
+nvim_lsp.kotlin_language_server.setup {
+  capabilities = capabilities,
+  -- root_dir = nvim_lsp.util.root_pattern('*.kt'),
+}
+
 -- C/C++
 -- nvim_lsp.ccls.setup {}
 nvim_lsp.clangd.setup {
