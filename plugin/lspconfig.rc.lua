@@ -152,6 +152,14 @@ nvim_lsp.kotlin_language_server.setup {
   -- root_dir = nvim_lsp.util.root_pattern('*.kt'),
 }
 
+-- Swift
+nvim_lsp.sourcekit.setup {
+  capabilities = capabilities,
+  -- Allow All the swift files
+  root_dir = nvim_lsp.util.root_pattern('*.swift'),
+  -- filetypes = { "swift", "c", "cpp", "objective-c", "objective-cpp" },
+}
+
 -- C/C++
 -- nvim_lsp.ccls.setup {}
 nvim_lsp.clangd.setup {
