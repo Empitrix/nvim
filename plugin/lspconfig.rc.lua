@@ -117,25 +117,25 @@ nvim_lsp.lua_ls.setup {
 }
 
 -- Dartls already added by "flutter-tools"
--- -- Dart
--- nvim_lsp.dartls.setup {
---   -- on_attach = on_attach,
---   cmd = { "dart", "language-server", "--protocol=lsp" },
---   filetypes = { "dart" },
---   init_options = {
---     closingLabels = true,
---     flutterOutline = true,
---     onlyAnalyzeProjectsWithOpenFiles = true,
---     outline = true,
---     suggestFromUnimportedLibraries = true
---   },
---   settings = {
---     dart = {
---       completeFunctionCalls = true,
---       showTodos = true
---     }
---   },
--- }
+-- Dart
+nvim_lsp.dartls.setup {
+  -- on_attach = on_attach,
+  cmd = { "dart", "language-server", "--protocol=lsp" },
+  filetypes = { "dart" },
+  init_options = {
+    closingLabels = true,
+    flutterOutline = true,
+    onlyAnalyzeProjectsWithOpenFiles = true,
+    outline = true,
+    suggestFromUnimportedLibraries = true
+  },
+  settings = {
+    dart = {
+      completeFunctionCalls = true,
+      showTodos = true
+    }
+  },
+}
 
 
 -- Java
