@@ -1,6 +1,11 @@
 local status, nvim_lsp = pcall(require, 'lspconfig')
 if (not status) then return end
 
+-- Loading flutter-tools
+local status, flutter_tools = pcall(require, 'flutter-tools')
+if (not status) then return end
+
+
 local protocol = require('vim.lsp.protocol')
 
 local on_attach = function(client, bufnr)
@@ -118,23 +123,32 @@ nvim_lsp.lua_ls.setup {
 
 -- Dartls already added by "flutter-tools"
 -- Dart
-nvim_lsp.dartls.setup {
-  -- on_attach = on_attach,
-  cmd = { "dart", "language-server", "--protocol=lsp" },
-  filetypes = { "dart" },
-  init_options = {
-    closingLabels = true,
-    flutterOutline = true,
-    onlyAnalyzeProjectsWithOpenFiles = true,
-    outline = true,
-    suggestFromUnimportedLibraries = true
-  },
-  settings = {
-    dart = {
-      completeFunctionCalls = true,
-      showTodos = true
-    }
-  },
+-- nvim_lsp.dartls.setup {
+--   -- on_attach = on_attach,
+--   cmd = { "dart", "language-server", "--protocol=lsp" },
+--   filetypes = { "dart" },
+--   init_options = {
+--     closingLabels = true,
+--     flutterOutline = true,
+--     onlyAnalyzeProjectsWithOpenFiles = true,
+--     outline = true,
+--     suggestFromUnimportedLibraries = true
+--   },
+--   settings = {
+--     dart = {
+--       completeFunctionCalls = true,
+--       showTodos = true
+--     }
+--   },
+-- }
+
+
+
+flutter_tools.setup {
+  lsp = {
+    capabilities = capabilities,
+    settings = { enableSnippets = true }
+  }
 }
 
 

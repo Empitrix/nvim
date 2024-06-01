@@ -25,7 +25,5 @@ ts.setup {
     'python',
     -- 'dart'
   },
-  autotag = {
-    enable = true,
-  }
+  -- autotag = { enable = true }
 }
