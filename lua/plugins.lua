@@ -27,11 +27,11 @@ packer.startup(function(use)
   }                                       -- Treesitter
   use 'williamboman/mason-lspconfig.nvim' -- Mason
   use 'williamboman/mason.nvim'           -- Mason
-  use 'jose-elias-alvarez/null-ls.nvim'   -- Use Neovim as a language server to inject LSP diagnostics, code actions, and more via Lua
-  use 'MunifTanjim/prettier.nvim'         -- Prettier for Neovim's built-in LSP clinet
-  use 'windwp/nvim-autopairs'             -- Auto close for pairs
-  use 'windwp/nvim-ts-autotag'            -- Auto close for tags
-  use 'nvim-lua/plenary.nvim'             -- Common utilities
+  -- use 'jose-elias-alvarez/null-ls.nvim'   -- Use Neovim as a language server to inject LSP diagnostics, code actions, and more via Lua
+  -- use 'MunifTanjim/prettier.nvim'         -- Prettier for Neovim's built-in LSP clinet
+  use 'windwp/nvim-autopairs'  -- Auto close for pairs
+  use 'windwp/nvim-ts-autotag' -- Auto close for tags
+  use 'nvim-lua/plenary.nvim'  -- Common utilities
   use 'nvim-telescope/telescope.nvim'
   use 'nvim-telescope/telescope-file-browser.nvim'
   use 'akinsho/nvim-bufferline.lua'
@@ -48,7 +48,7 @@ packer.startup(function(use)
     },
   }
 
-  use "lukas-reineke/indent-blankline.nvim"
+  -- use "lukas-reineke/indent-blankline.nvim"
 
   use "ellisonleao/gruvbox.nvim" -- Gruvbox (Neovide)
 

@@ -1,12 +1,12 @@
-local status, prettier = pcall(require, 'prettier')
-if (not status) then return end
-
-prettier.setup {
-  bin = 'prettierd',
-  filetypes = {
-    'css',
-    'less',
-    'scss',
-    'json'
-  }
-}
+-- local status, prettier = pcall(require, 'prettier')
+-- if (not status) then return end
+--
+-- prettier.setup {
+--   bin = 'prettierd',
+--   filetypes = {
+--     'css',
+--     'less',
+--     'scss',
+--     'json'
+--   }
+-- }

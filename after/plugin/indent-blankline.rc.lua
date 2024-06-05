@@ -1,6 +1,6 @@
-local stauts, ibl = pcall(require, 'ibl')
-if (not stauts) then return end
-
+-- local stauts, ibl = pcall(require, 'ibl')
+-- if (not stauts) then return end
+--
 -- ibl.setup {
 --   -- indent = { char = "┠" },
 --   indent = { char = "▎", tab_char = "󱦰" },
