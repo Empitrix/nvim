@@ -13,7 +13,7 @@ bufferline.setup {
     -- separator_style = 'thin',
     show_duplicate_prefix = false,
     -- separator_style = 'slope',
-    always_show_bufferline = false,
+    always_show_bufferline = true,
     show_buffer_close_icons = false,
     show_close_icon = false,
     color_icons = true
