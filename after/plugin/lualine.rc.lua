@@ -4,7 +4,7 @@ lualine.setup {
   options = {
     icons_enabled = true,
     -- theme = 'solarized_dark',
-    theme = vim.g.neovide ~= nil and 'gruvbox' or 'solarized_dark',
+    theme = (vim.g.neovide ~= nil or vim.fn.has("win32") ~= 1) and 'gruvbox' or 'solarized_dark',
     section_separators = { left = '', right = '' },
     component_separators = { left = '', right = '' },
     disabled_filetypes = {}

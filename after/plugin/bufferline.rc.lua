@@ -5,6 +5,11 @@ if (not status) then return end
 local isN = vim.g.neovide == nil
 
 
+if vim.fn.has("win32") ~= 1 then
+  isN = false
+end
+
+
 bufferline.setup {
   options = {
     mode = 'tabs',
