@@ -88,3 +88,11 @@ keymap.set('n', '<leader>ha', '"_y[{V%', opts)
 -- Set keep visual mode after indentation
 keymap.set('v', '>', '>gv', opts)
 keymap.set('v', '<', '<gv', opts)
+
+
+-- Full Screen for neovide if its possible
+if vim.g.neovide == true then
+  vim.api.nvim_set_keymap(
+    'n', '<F11>',
+    ":let g:neovide_fullscreen = !g:neovide_fullscreen<CR>", {})
+end
