@@ -9,19 +9,19 @@ packer.startup(function(use)
   use {
     'svrana/neosolarized.nvim',
     -- commit = "42de7fcfb3a909910da18c545323b264f0e8918a",
-    -- commit = "ce91523ab50cccb7da7e227efc7c1084e84f10b5", -- Lates valid commit (dont have the nil problem on colorbuddy )
-    commit = "f04cb6517933ced4b9701048aad5865968a58218", -- Pre-Lates valid commit ( colors are correct (for git ...) )
+    commit = "ce91523ab50cccb7da7e227efc7c1084e84f10b5", -- Lates valid commit (dont have the nil problem on colorbuddy )
+    -- commit = "f04cb6517933ced4b9701048aad5865968a58218", -- Pre-Lates valid commit ( colors are correct (for git ...) )
     requires = { 'tjdevries/colorbuddy.nvim' }
-  }                                                      -- Solarized theme
-  use 'kyazdani42/nvim-web-devicons'                     -- File icons
-  use 'glepnir/lspsaga.nvim'                             -- LSP UIs
-  use 'L3MON4D3/LuaSnip'                                 -- Snippet
-  use 'hoob3rt/lualine.nvim'                             -- Statusline
-  use 'onsails/lspkind-nvim'                             -- Vscode-like pictograms
-  use 'hrsh7th/cmp-buffer'                               -- nvim-cmp source for buffer words
-  use 'hrsh7th/cmp-nvim-lsp'                             -- nvim-cmp source for neovim's built-in LSP
-  use 'hrsh7th/nvim-cmp'                                 -- Completion
-  use 'neovim/nvim-lspconfig'                            -- LSP
+  }                                  -- Solarized theme
+  use 'kyazdani42/nvim-web-devicons' -- File icons
+  use 'glepnir/lspsaga.nvim'         -- LSP UIs
+  use 'L3MON4D3/LuaSnip'             -- Snippet
+  use 'hoob3rt/lualine.nvim'         -- Statusline
+  use 'onsails/lspkind-nvim'         -- Vscode-like pictograms
+  use 'hrsh7th/cmp-buffer'           -- nvim-cmp source for buffer words
+  use 'hrsh7th/cmp-nvim-lsp'         -- nvim-cmp source for neovim's built-in LSP
+  use 'hrsh7th/nvim-cmp'             -- Completion
+  use 'neovim/nvim-lspconfig'        -- LSP
   use {
     'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate'
