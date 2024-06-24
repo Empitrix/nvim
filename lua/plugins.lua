@@ -9,7 +9,8 @@ packer.startup(function(use)
   use {
     'svrana/neosolarized.nvim',
     -- commit = "42de7fcfb3a909910da18c545323b264f0e8918a",
-    commit = "ce91523ab50cccb7da7e227efc7c1084e84f10b5", -- Lates valid commit (dont have the nil problem on colorbuddy )
+    -- commit = "ce91523ab50cccb7da7e227efc7c1084e84f10b5", -- Lates valid commit (dont have the nil problem on colorbuddy )
+    commit = "f04cb6517933ced4b9701048aad5865968a58218", -- Pre-Lates valid commit ( colors are correct (for git ...) )
     requires = { 'tjdevries/colorbuddy.nvim' }
   }                                                      -- Solarized theme
   use 'kyazdani42/nvim-web-devicons'                     -- File icons
