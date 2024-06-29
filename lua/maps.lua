@@ -96,3 +96,15 @@ if vim.g.neovide == true then
     'n', '<F11>',
     ":let g:neovide_fullscreen = !g:neovide_fullscreen<CR>", {})
 end
+
+
+
+keymap.set('', '<leader>dl', '$') -- go to end
+keymap.set('', '<leader>dh', '^') -- go to start
+keymap.set('', '<leader>dl', '$') -- go to end
+keymap.set('', '<leader>dh', '^') -- go to start
+
+-- for () [] {}
+keymap.set('n', '<leader>sa', 'v%')  -- select till end/start (if in the beggining / end)
+keymap.set('n', '<leader>gb', '%')   -- got to the begining / or end
+keymap.set('n', '<leader>ga', '%v%') -- go to the start/begging and select all of it
