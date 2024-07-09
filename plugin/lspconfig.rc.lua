@@ -100,9 +100,11 @@ nvim_lsp.rust_analyzer.setup {
 -- Python
 nvim_lsp.pyright.setup {
   on_attach = on_attach,
+  capabilities = capabilities,
   filetypes = { "python" },
   cmd = { 'pyright-langserver', '--stdio' },
 }
+
 -- Lua
 nvim_lsp.lua_ls.setup {
   on_attach = on_attach,
