@@ -208,6 +208,7 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
 -- Set virtual_text prefix icon
 vim.diagnostic.config({
   virtual_text = {
-    prefix = " ",
+    -- prefix = " ",
+    prefix = "  ",
   },
 })
