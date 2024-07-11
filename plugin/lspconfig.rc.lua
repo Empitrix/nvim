@@ -182,6 +182,11 @@ nvim_lsp.clangd.setup {
   capabilities = capabilities,
 }
 
+-- CMake
+nvim_lsp.cmake.setup {
+  capabilities = capabilities,
+}
+
 
 -- vim.cmd [[ let g:loaded_syntastic_dart_dartanalyzer_checker = 0 ]]
 
