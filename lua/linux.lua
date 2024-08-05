@@ -25,7 +25,7 @@ gruvbox.setup({
   palette_overrides = {},
   overrides = {},
   dim_inactive = false,
-  transparent_mode = false, -- Using default neovide background transparency
+  transparent_mode = true, -- Using default neovide background transparency
 })
 
 
