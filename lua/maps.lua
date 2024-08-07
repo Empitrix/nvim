@@ -11,6 +11,7 @@ keymap.set("i", "<C-h>", "<LEFT>")
 -- Copy && Paste
 vim.api.nvim_set_keymap('v', '<Leader>y', '"+y', opts)
 vim.api.nvim_set_keymap('n', '<Leader>p', '"+p', opts)
+vim.cmd([[ set clipboard=unnamedplus ]])  -- for 'copy' in arch (xclip)
 
 -- Exit Termianl mode
 keymap.set('t', '<C-p>', '<C-\\><C-n>', opts)
