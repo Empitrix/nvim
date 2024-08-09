@@ -28,7 +28,7 @@ lualine.setup {
           hint = ' '
         },
       },
-      'encoding',
+      -- 'encoding',
       'filetype'
     },
     lualine_y = { 'progress' },
