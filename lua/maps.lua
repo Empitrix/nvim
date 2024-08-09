@@ -59,12 +59,19 @@ keymap.set('', 'sl', '<C-w>l')
 -- Resize window
 keymap.set('n', '<C-w><left>', '<C-w><')
 keymap.set('n', '<C-w><right>', '<C-w>>')
-keymap.set('n', '<C-w><up>', '<C-w>+')
-keymap.set('n', '<C-w><down>', '<C-w>-')
-keymap.set('n', '<leader>h', '<C-w><')
-keymap.set('n', '<leader>l', '<C-w>>')
-keymap.set('n', '<leader>k', '<C-w>+')
-keymap.set('n', '<leader>j', '<C-w>-')
+keymap.set('n', '<C-w><down>', '<C-w>+')
+keymap.set('n', '<C-w><up>', '<C-w>-')
+
+-- keymap.set('n', '<leader>h', '<C-w><')
+-- keymap.set('n', '<leader>l', '<C-w>>')
+-- keymap.set('n', '<leader>k', '<C-w>+')
+-- keymap.set('n', '<leader>j', '<C-w>-')
+
+keymap.set("n", "<leader>h", '<cmd>vertical resize -3<cr>')
+keymap.set("n", "<leader>l", '<cmd>vertical resize +3<cr>')
+keymap.set("n", "<leader>k", '<cmd>horizontal resize -3<cr>')
+keymap.set("n", "<leader>j", '<cmd>horizontal resize +3<cr>')
+
 
 -- Move between tabs and creat/close them
 keymap.set('n', '<leader>tn', ':tabnew<CR>', opts)
