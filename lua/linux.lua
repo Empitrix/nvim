@@ -33,3 +33,10 @@ if vim.g.neovide ~= nil then
   vim.cmd("colorscheme gruvbox")
 end
 
+
+
+-- Bright & rounded borders for hover windows
+vim.cmd([[autocmd! ColorScheme * highlight FloatBorder guifg=#d3c6aa]])
+vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
+	border = "rounded"})
+
