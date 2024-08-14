@@ -51,7 +51,7 @@ nvim_lsp.emmet_ls.setup({
 })
 
 
-nvim_lsp.emmet_language_server.setup{
+nvim_lsp.emmet_language_server.setup {
   capabilities = capabilities,
   filetypes = { "html", "htmldjango" },
 }
@@ -219,7 +219,11 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
 -- Set virtual_text prefix icon
 vim.diagnostic.config({
   virtual_text = {
-    -- prefix = " ",
     prefix = "  ",
   },
+  float = {
+    header = false,
+    border = 'rounded',
+    focusable = true,
+  }
 })

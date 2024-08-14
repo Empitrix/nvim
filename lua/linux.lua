@@ -26,7 +26,7 @@ gruvbox.setup({
   dim_inactive = false,
   transparent_mode = vim.g.neovide == nil,
   overrides = {
-    CursorLineNr = { bg = "#1a1919", bold=false },
+    CursorLineNr = { bg = "#1a1919", bold = false },
   }
 })
 
@@ -39,5 +39,4 @@ gruvbox.setup({
 -- Bright & rounded borders for hover windows
 vim.cmd([[autocmd! ColorScheme * highlight FloatBorder guifg=#d3c6aa]])
 vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
-	border = "rounded"})
-
+  border = "rounded" })
