@@ -11,7 +11,7 @@ keymap.set("i", "<C-h>", "<LEFT>")
 -- Copy && Paste
 vim.api.nvim_set_keymap('v', '<Leader>y', '"+y', opts)
 vim.api.nvim_set_keymap('n', '<Leader>p', '"+p', opts)
-vim.cmd([[ set clipboard=unnamedplus ]])  -- for 'copy' in arch (xclip)
+vim.cmd([[ set clipboard=unnamedplus ]]) -- for 'copy' in arch (xclip)
 
 -- Exit Termianl mode
 keymap.set('t', '<C-p>', '<C-\\><C-n>', opts)
@@ -116,3 +116,6 @@ keymap.set('', '<leader>dh', '^') -- go to start
 keymap.set('n', '<leader>sa', 'v%')  -- select till end/start (if in the beggining / end)
 keymap.set('n', '<leader>gb', '%')   -- got to the begining / or end
 keymap.set('n', '<leader>ga', '%v%') -- go to the start/begging and select all of it
+
+
+keymap.set('n', '<leader>tt', ':Telescope<CR>', opts) -- open 'Telescope'
