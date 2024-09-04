@@ -18,9 +18,19 @@ local on_attach = function(client, bufnr)
     vim.api.nvim_command [[augroup END]]
   end
 end
+
+
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
+
 -- Typescript
 nvim_lsp.tsserver.setup {
-  -- on_attach = on_attach,
+  capabilities = capabilities,
+  settings = {
+    completions = {
+      completeFunctionCalls = true
+    }
+  },
   filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
   cmd = { "typescript-language-server", "--stdio" }
 }
@@ -101,11 +111,15 @@ nvim_lsp.rust_analyzer.setup {
 }
 
 
-
 -- Python
 nvim_lsp.pyright.setup {
-  on_attach = on_attach,
+  -- on_attach = on_attach,
   capabilities = capabilities,
+  settings = {
+    completions = {
+      completeFunctionCalls = true
+    }
+  },
   filetypes = { "python" },
   cmd = { 'pyright-langserver', '--stdio' },
 }
