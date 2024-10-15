@@ -198,18 +198,18 @@ nvim_lsp.sourcekit.setup {
 
 -- C/C++
 -- nvim_lsp.ccls.setup {}
--- nvim_lsp.clangd.setup {
---   capabilities = capabilities,
--- }
-
-nvim_lsp.ccls.setup {
+nvim_lsp.clangd.setup {
   capabilities = capabilities,
-  init_options = {
-    cache = {
-      directory = '/home/empitrix/.config/nvim/cache/ccls',
-    },
-  }
 }
+
+-- nvim_lsp.ccls.setup {
+--   capabilities = capabilities,
+--   init_options = {
+--     cache = {
+--       directory = '/home/empitrix/.config/nvim/cache/ccls',
+--     },
+--   }
+-- }
 
 -- CMake
 nvim_lsp.cmake.setup {
