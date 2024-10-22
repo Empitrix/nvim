@@ -119,3 +119,10 @@ keymap.set('n', '<leader>ga', '%v%') -- go to the start/begging and select all o
 
 
 keymap.set('n', '<leader>tt', ':Telescope<CR>', opts) -- open 'Telescope'
+
+-- Smooth scroll down
+vim.api.nvim_set_keymap('n', '<C-j>', '4<C-e>', opts)
+-- Smooth scroll up
+vim.api.nvim_set_keymap('n', '<C-k>', '4<C-y>', opts)
+
+vim.opt.updatetime = 200 -- default is 4000ms, reducing to 200ms
