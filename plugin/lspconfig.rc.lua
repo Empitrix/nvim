@@ -23,17 +23,17 @@ end
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 
--- Typescript
-nvim_lsp.ts_ls.setup {
-  capabilities = capabilities,
-  settings = {
-    completions = {
-      completeFunctionCalls = true
-    }
-  },
-  filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
-  cmd = { "typescript-language-server", "--stdio" }
-}
+-- -- Typescript
+-- nvim_lsp.tsserver.setup {
+--   capabilities = capabilities,
+--   settings = {
+--     completions = {
+--       completeFunctionCalls = true
+--     }
+--   },
+--   filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
+--   cmd = { "typescript-language-server", "--stdio" }
+-- }
 
 --Enable (broadcasting) snippet capability for completion
 local capabilities = vim.lsp.protocol.make_client_capabilities()
