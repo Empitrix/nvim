@@ -126,3 +126,6 @@ vim.api.nvim_set_keymap('n', '<C-j>', '4<C-e>', opts)
 vim.api.nvim_set_keymap('n', '<C-k>', '4<C-y>', opts)
 
 vim.opt.updatetime = 200 -- default is 4000ms, reducing to 200ms
+
+-- List all of the functions (useful for headers)
+keymap.set('n', '<leader>laf', ':g/^\\(void\\|int\\|char \\*\\*\\|char\\)\\s\\+\\w\\+(/p<CR>', opts)
