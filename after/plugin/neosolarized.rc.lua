@@ -1,11 +1,12 @@
+if true then return end
 local status, n = pcall(require, 'neosolarized')
 if (not status) then return end
 
 -- Set background to fill for neovide
 n.setup({
-  comment_italics = true,
-  background_set = vim.g.neovide ~= nil
-  -- background_set = vim.g.neovide ~= nil
+	comment_italics = true,
+	background_set = vim.g.neovide ~= nil
+	-- background_set = vim.g.neovide ~= nil
 })
 
 local colorbuddy = require('colorbuddy.init')

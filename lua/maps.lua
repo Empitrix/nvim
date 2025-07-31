@@ -100,9 +100,9 @@ keymap.set('v', '<', '<gv', opts)
 
 -- Full Screen for neovide if its possible
 if vim.g.neovide == true then
-  vim.api.nvim_set_keymap(
-    'n', '<F11>',
-    ":let g:neovide_fullscreen = !g:neovide_fullscreen<CR>", {})
+	vim.api.nvim_set_keymap(
+		'n', '<F11>',
+		":let g:neovide_fullscreen = !g:neovide_fullscreen<CR>", {})
 end
 
 
@@ -121,9 +121,9 @@ keymap.set('n', '<leader>ga', '%v%') -- go to the start/begging and select all o
 keymap.set('n', '<leader>tt', ':Telescope<CR>', opts) -- open 'Telescope'
 
 -- Smooth scroll down
-vim.api.nvim_set_keymap('n', '<C-j>', '4<C-e>', opts)
+vim.api.nvim_set_keymap('', '<C-j>', '4<C-e>', opts)
 -- Smooth scroll up
-vim.api.nvim_set_keymap('n', '<C-k>', '4<C-y>', opts)
+vim.api.nvim_set_keymap('', '<C-k>', '4<C-y>', opts)
 
 vim.opt.updatetime = 200 -- default is 4000ms, reducing to 200ms
 
@@ -131,4 +131,4 @@ vim.opt.updatetime = 200 -- default is 4000ms, reducing to 200ms
 keymap.set('n', '<leader>laf', ':g/^\\(void\\|int\\|char \\*\\*\\|char\\)\\s\\+\\w\\+(/p<CR>', opts)
 
 vim.keymap.set('n', '<leader>fd', '<cmd>lua require("telescope.builtin").fd()<cr>',
-  opts)
+	opts)

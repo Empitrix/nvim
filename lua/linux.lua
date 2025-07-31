@@ -1,3 +1,5 @@
+if true then return end
+
 local status, gruvbox = pcall(require, "gruvbox")
 if (not status) then return end
 
@@ -22,7 +24,6 @@ gruvbox.setup({
   inverse = true,
   contrast = "",
   palette_overrides = {},
-  overrides = {},
   dim_inactive = false,
   transparent_mode = vim.g.neovide == nil,
   overrides = {
@@ -37,6 +38,21 @@ gruvbox.setup({
 
 
 -- Bright & rounded borders for hover windows
-vim.cmd([[autocmd! ColorScheme * highlight FloatBorder guifg=#d3c6aa]])
-vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
-  border = "rounded" })
+-- vim.cmd([[autocmd! ColorScheme * highlight FloatBorder guifg=#d3c6aa]])
+-- vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
+--   border = "rounded" })
+
+-- Use modern autocmd API
+vim.api.nvim_create_autocmd("ColorScheme", {
+  group = vim.api.nvim_create_augroup("CustomHighlights", { clear = true }),
+  callback = function()
+    vim.api.nvim_set_hl(0, "FloatBorder", { fg = "#d3c6aa" })
+  end,
+})
+
+-- Modern hover handler with border
+vim.lsp.handlers["textDocument/signatureHelp"] = function(_, result, _, config)
+  config = config or {}
+  config.border = "rounded"
+  return vim.lsp.util.open_floating_preview(result.contents, "markdown", config)
+end

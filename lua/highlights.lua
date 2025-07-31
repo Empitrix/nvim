@@ -9,3 +9,5 @@ vim.opt.background = "dark"
 vim.opt.list = true
 vim.opt.listchars = "tab:󱦰 "
 -- vim.opt.listchars = "tab:▎󱦰"
+
+-- vim.cmd("colorscheme tokyonight")
