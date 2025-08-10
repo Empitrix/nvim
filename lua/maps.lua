@@ -132,3 +132,7 @@ keymap.set('n', '<leader>laf', ':g/^\\(void\\|int\\|char \\*\\*\\|char\\)\\s\\+\
 
 vim.keymap.set('n', '<leader>fd', '<cmd>lua require("telescope.builtin").fd()<cr>',
 	opts)
+
+-- Select the current word (search (backward))
+-- keymap.set('n', '<leader>ss', '#', opts)
+-- keymap.set('n', '<leader>s', '*', opts) -- FORWARD SEARCH
