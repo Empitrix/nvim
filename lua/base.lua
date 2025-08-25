@@ -40,8 +40,8 @@ vim.cmd([[let &t_Ce = "\e[4:0m"]])
 
 -- Turn off paste mode when leaving insert
 vim.api.nvim_create_autocmd("InsertLeave", {
-  pattern = "*",
-  command = "set nopaste"
+	pattern = "*",
+	command = "set nopaste"
 })
 
 -- Auto-command to turn off line numbers in terminal mode
@@ -64,3 +64,36 @@ vim.cmd([[
 
 -- Add asterisks in block comments
 vim.opt.formatoptions:append { 'r' }
+
+
+
+
+
+-- -- Treat *.fs and *.vs as GLSL files (so they use the glsl treesitter parser)
+-- vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+-- 	pattern = { "*.fs", "*.vs" },
+-- 	callback = function()
+-- 		vim.bo.filetype = "glsl"
+-- 	end,
+-- })
+--
+-- -- Disable LSP for these shader files
+-- vim.api.nvim_create_autocmd("LspAttach", {
+-- 	callback = function(args)
+-- 		local bufnr = args.buf
+-- 		local fname = vim.api.nvim_buf_get_name(bufnr)
+-- 		if fname:match("%.fs$") or fname:match("%.vs$") then
+-- 			vim.schedule(function()
+-- 				vim.lsp.buf_detach_client(bufnr, args.data.client_id)
+-- 			end)
+-- 		end
+-- 	end,
+
+
+-- Convert the *.vs, *.fs, *.frag, *vert to glsl file format
+vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+	pattern = { "*.fs", "*.vs", "*.frag", "*.vert" },
+	callback = function()
+		vim.bo.filetype = "glsl"
+	end,
+})
