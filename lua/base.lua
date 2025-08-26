@@ -51,44 +51,7 @@ vim.cmd([[
 ]])
 
 
--- vim.cmd([[
---   autocmd FileType c setlocal shiftwidth=2 tabstop=2 noexpandtab
---   autocmd FileType c set noexpandtab
--- ]])
---
--- vim.api.nvim_command([[
---   autocmd FileType c set noexpandtab
--- ]])
---
--- print("Auto cmd works loaded");
-
--- Add asterisks in block comments
 vim.opt.formatoptions:append { 'r' }
-
-
-
-
-
--- -- Treat *.fs and *.vs as GLSL files (so they use the glsl treesitter parser)
--- vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
--- 	pattern = { "*.fs", "*.vs" },
--- 	callback = function()
--- 		vim.bo.filetype = "glsl"
--- 	end,
--- })
---
--- -- Disable LSP for these shader files
--- vim.api.nvim_create_autocmd("LspAttach", {
--- 	callback = function(args)
--- 		local bufnr = args.buf
--- 		local fname = vim.api.nvim_buf_get_name(bufnr)
--- 		if fname:match("%.fs$") or fname:match("%.vs$") then
--- 			vim.schedule(function()
--- 				vim.lsp.buf_detach_client(bufnr, args.data.client_id)
--- 			end)
--- 		end
--- 	end,
-
 
 -- Convert the *.vs, *.fs, *.frag, *vert to glsl file format
 vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {

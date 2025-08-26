@@ -17,8 +17,8 @@ tokyonight.setup({
 	day_brightness = 0.3,
 	dim_inactive = false,
 	lualine_bold = false,
-	on_colors = function(colors) end,
-	on_highlights = function(highlights, colors) end,
+	on_colors = function(_) end,
+	on_highlights = function(_, _) end,
 	cache = true,
 	plugins = {},
 })

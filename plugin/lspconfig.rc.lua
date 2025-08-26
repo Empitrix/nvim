@@ -9,19 +9,19 @@ if (not status) then return end
 local protocol = require('vim.lsp.protocol')
 
 local on_attach = function(client, bufnr)
-  -- formatting
-  if client.server_capabilities.documentFormattingProvider then
-    vim.api.nvim_command [[augroup Format]]
-    vim.api.nvim_command [[autocmd! * <buffer>]]
-    -- vim.api.nvim_command [[autocmd BufWritePre <buffer> :lua vim.lsp.buf.formatting_seq_sync()]]
-    vim.api.nvim_command [[autocmd BufWritePre <buffer> lua vim.lsp.buf.format() ]]
-    vim.api.nvim_command [[augroup END]]
-  end
+	-- formatting
+	if client.server_capabilities.documentFormattingProvider then
+		vim.api.nvim_command [[augroup Format]]
+		vim.api.nvim_command [[autocmd! * <buffer>]]
+		-- vim.api.nvim_command [[autocmd BufWritePre <buffer> :lua vim.lsp.buf.formatting_seq_sync()]]
+		vim.api.nvim_command [[autocmd BufWritePre <buffer> lua vim.lsp.buf.format() ]]
+		vim.api.nvim_command [[augroup END]]
+	end
 end
 
 
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
+-- local capabilities = vim.lsp.protocol.make_client_capabilities()
+-- capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 
 -- -- Typescript
 -- nvim_lsp.tsserver.setup {
@@ -40,30 +40,30 @@ local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 nvim_lsp.html.setup {
-  capabilities = capabilities,
+	capabilities = capabilities,
 }
 
 -- HTML Snippet (https://github.com/aca/emmet-ls)
 nvim_lsp.emmet_ls.setup({
-  -- on_attach = on_attach,
-  capabilities = capabilities,
-  -- filetypes = { "css", "eruby", "html", "javascript", "javascriptreact", "less", "sass", "scss", "svelte", "pug", "typescriptreact", "vue" },
-  -- filetypes = { "css", "html", "vue" },
-  filetypes = { "html", "htmldjango", "typescript.tsx" },
-  init_options = {
-    html = {
-      options = {
-        -- For possible options, see: https://github.com/emmetio/emmet/blob/master/src/config.ts#L79-L267
-        ["bem.enabled"] = true,
-      },
-    },
-  }
+	-- on_attach = on_attach,
+	capabilities = capabilities,
+	-- filetypes = { "css", "eruby", "html", "javascript", "javascriptreact", "less", "sass", "scss", "svelte", "pug", "typescriptreact", "vue" },
+	-- filetypes = { "css", "html", "vue" },
+	filetypes = { "html", "htmldjango", "typescript.tsx" },
+	init_options = {
+		html = {
+			options = {
+				-- For possible options, see: https://github.com/emmetio/emmet/blob/master/src/config.ts#L79-L267
+				["bem.enabled"] = true,
+			},
+		},
+	}
 })
 
 
 nvim_lsp.emmet_language_server.setup {
-  capabilities = capabilities,
-  filetypes = { "html", "htmldjango" },
+	capabilities = capabilities,
+	filetypes = { "html", "htmldjango" },
 }
 
 -- css
@@ -72,7 +72,7 @@ nvim_lsp.emmet_language_server.setup {
 -- capabilities.textDocument.completion.completionItem.snippetSupport = true
 -- same capabilities as html
 nvim_lsp.cssls.setup {
-  capabilities = capabilities,
+	capabilities = capabilities,
 }
 
 
@@ -95,51 +95,51 @@ nvim_lsp.cssls.setup {
 
 -- Rust
 nvim_lsp.rust_analyzer.setup {
-  settings = {
-    ['rust-analyzer'] = {
-      diagnostics = {
-        -- enable = false,
-        enable = true,
-      },
-      -- completion = {
-      --   completionItem = {
-      --     snippetSupport = true
-      --   }
-      -- }
-    }
-  }
+	settings = {
+		['rust-analyzer'] = {
+			diagnostics = {
+				-- enable = false,
+				enable = true,
+			},
+			-- completion = {
+			--   completionItem = {
+			--     snippetSupport = true
+			--   }
+			-- }
+		}
+	}
 }
 
 
 -- Python
 nvim_lsp.pyright.setup {
-  -- on_attach = on_attach,
-  capabilities = capabilities,
-  settings = {
-    completions = {
-      completeFunctionCalls = true
-    }
-  },
-  filetypes = { "python" },
-  cmd = { 'pyright-langserver', '--stdio' },
+	-- on_attach = on_attach,
+	capabilities = capabilities,
+	settings = {
+		completions = {
+			completeFunctionCalls = true
+		}
+	},
+	filetypes = { "python" },
+	cmd = { 'pyright-langserver', '--stdio' },
 }
 
 -- Lua
 nvim_lsp.lua_ls.setup {
-  on_attach = on_attach,
-  settings = {
-    Lua = {
-      diagnostics = {
-        -- Get the language server to recognize the 'vim' global
-        globals = { 'vim' }
-      },
-      workspace = {
-        -- Make the server aware of Neovim runtime files
-        library = vim.api.nvim_get_runtime_file("", true),
-        checkThirdParty = false
-      }
-    }
-  }
+	on_attach = on_attach,
+	settings = {
+		Lua = {
+			diagnostics = {
+				-- Get the language server to recognize the 'vim' global
+				globals = { 'vim' }
+			},
+			workspace = {
+				-- Make the server aware of Neovim runtime files
+				library = vim.api.nvim_get_runtime_file("", true),
+				checkThirdParty = false
+			}
+		}
+	}
 }
 
 -- Dartls already added by "flutter-tools"
@@ -166,10 +166,10 @@ nvim_lsp.lua_ls.setup {
 
 
 flutter_tools.setup {
-  lsp = {
-    capabilities = capabilities,
-    settings = { enableSnippets = true }
-  }
+	lsp = {
+		capabilities = capabilities,
+		settings = { enableSnippets = true }
+	}
 }
 
 
@@ -177,29 +177,29 @@ flutter_tools.setup {
 -- nvim_lsp.java_language_server.setup {}
 --
 nvim_lsp.jdtls.setup {
-  capabilities = capabilities,
+	capabilities = capabilities,
 }
 
 
 -- Kotlin
 nvim_lsp.kotlin_language_server.setup {
-  capabilities = capabilities,
-  -- root_dir = nvim_lsp.util.root_pattern('*.kt'),
+	capabilities = capabilities,
+	-- root_dir = nvim_lsp.util.root_pattern('*.kt'),
 }
 
 -- Swift
 nvim_lsp.sourcekit.setup {
-  capabilities = capabilities,
-  filetypes = { "swift" },
-  -- Allow All the swift files
-  root_dir = nvim_lsp.util.root_pattern('*.swift'),
-  -- filetypes = { "swift", "c", "cpp", "objective-c", "objective-cpp" },
+	capabilities = capabilities,
+	filetypes = { "swift" },
+	-- Allow All the swift files
+	root_dir = nvim_lsp.util.root_pattern('*.swift'),
+	-- filetypes = { "swift", "c", "cpp", "objective-c", "objective-cpp" },
 }
 
 -- C/C++
 -- nvim_lsp.ccls.setup {}
 nvim_lsp.clangd.setup {
-  capabilities = capabilities,
+	capabilities = capabilities,
 }
 
 -- nvim_lsp.ccls.setup {
@@ -213,7 +213,7 @@ nvim_lsp.clangd.setup {
 
 -- CMake
 nvim_lsp.cmake.setup {
-  capabilities = capabilities,
+	capabilities = capabilities,
 }
 
 
@@ -223,30 +223,30 @@ nvim_lsp.cmake.setup {
 -- From: https://github.com/folke/trouble.nvim/issues/96
 local signs = { Error = '󰅙 ', Warn = ' ', Hint = ' ', Info = ' ' }
 for type, icon in pairs(signs) do
-  local hl = 'DiagnosticSign' .. type
-  -- default: numhl = ''
-  vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = '' })
+	local hl = 'DiagnosticSign' .. type
+	-- default: numhl = ''
+	vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = '' })
 end
 
 -- See ':hi' in buffer for colors
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
-  vim.lsp.diagnostic.on_publish_diagnostics,
-  {
-    virtual_text = true,
-    signs = true,
-    update_in_insert = false, -- Good for performancep
-    underline = true,
-  }
+	vim.lsp.diagnostic.on_publish_diagnostics,
+	{
+		virtual_text = true,
+		signs = true,
+		update_in_insert = false, -- Good for performancep
+		underline = true,
+	}
 )
 
 -- Set virtual_text prefix icon
 vim.diagnostic.config({
-  virtual_text = {
-    prefix = "  ",
-  },
-  float = {
-    header = false,
-    border = 'rounded',
-    focusable = true,
-  }
+	virtual_text = {
+		prefix = "  ",
+	},
+	float = {
+		header = false,
+		border = 'rounded',
+		focusable = true,
+	}
 })

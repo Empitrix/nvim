@@ -113,10 +113,9 @@ keymap.set('', '<leader>dl', '$') -- go to end
 keymap.set('', '<leader>dh', '^') -- go to start
 
 -- for () [] {}
-keymap.set('n', '<leader>sa', 'v%')  -- select till end/start (if in the beggining / end)
-keymap.set('', '<leader>gb', '%')    -- got to the begining / or end
-keymap.set('n', '<leader>ga', '%v%') -- go to the start/begging and select all of it
-
+keymap.set('n', '<leader>sa', 'v%')                   -- select till end/start (if in the beggining / end)
+keymap.set('', '<leader>gb', '%')                     -- got to the begining / or end
+keymap.set('n', '<leader>ga', '%v%')                  -- go to the start/begging and select all of it
 
 keymap.set('n', '<leader>tt', ':Telescope<CR>', opts) -- open 'Telescope'
 
