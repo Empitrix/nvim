@@ -1,3 +1,4 @@
+---@diagnostic disable: undefined-global
 local status, packer = pcall(require, "packer")
 if not status then return end
 
@@ -8,6 +9,7 @@ packer.startup(function(use)
 	use "folke/tokyonight.nvim"
 	use 'kyazdani42/nvim-web-devicons'
 	use 'neovim/nvim-lspconfig'
+	-- use 'glepnir/lspsaga.nvim'
 	use {
 		'nvim-treesitter/nvim-treesitter',
 		run = ':TSUpdate'
@@ -26,4 +28,10 @@ packer.startup(function(use)
 			'stevearc/dressing.nvim', -- optional: vim.ui.select
 		}
 	}
+	-- Snippets
+	use 'L3MON4D3/LuaSnip'
+	use 'onsails/lspkind-nvim'
+	use 'hrsh7th/nvim-cmp'
+	use 'hrsh7th/cmp-nvim-lsp'
+	-- use 'hrsh7th/cmp-buffer'
 end)

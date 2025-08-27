@@ -1,3 +1,4 @@
+---@diagnostic disable: undefined-global
 local status, ts = pcall(require, 'nvim-treesitter.configs')
 if (not status) then return end
 
@@ -13,16 +14,15 @@ ts.setup {
 	},
 	indent = {
 		enable = true,
-		disable = { "python", "cpp", "c", "html" },
+		disable = { "cpp", "c", "html" },
 	},
 	ensure_installed = {
-		-- -- 'tsx',
+		'c',
 		'lua',
 		'json',
+		'python',
 		'css',
 		'html',
-		'python',
-		-- 'dart'
 	},
 	-- autotag = { enable = true }
 }
