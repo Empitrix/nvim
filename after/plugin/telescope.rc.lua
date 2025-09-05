@@ -83,3 +83,19 @@ vim.keymap.set("n", "sf", function()
 		layout_config = { height = 40 },
 	})
 end, opts)
+
+
+-- File browser showing all files (including git-ignored)
+vim.keymap.set("n", "fi", function()
+	telescope.extensions.file_browser.file_browser({
+		path = telescope_buffer_dir(),
+		cwd = telescope_buffer_dir(),
+		respect_git_ignore = false,
+		hidden = true,
+		grouped = true,
+		previewer = false,
+		no_ignore = true,
+		initial_mode = "normal",
+		layout_config = { height = 40 },
+	})
+end, opts)
