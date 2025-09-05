@@ -129,8 +129,20 @@ vim.opt.updatetime = 200 -- default is 4000ms, reducing to 200ms
 -- List all of the functions (useful for headers)
 keymap.set('n', '<leader>laf', ':g/^\\(void\\|int\\|char \\*\\*\\|char\\)\\s\\+\\w\\+(/p<CR>', opts)
 
-vim.keymap.set('n', '<leader>fd', '<cmd>lua require("telescope.builtin").fd()<cr>',
-	opts)
+vim.keymap.set('n', '<leader>fd', '<cmd>lua require("telescope.builtin").fd()<cr>', opts)
+
+
+
+vim.keymap.set("n", "<leader>hg",
+	"<cmd>lua require('telescope').extensions.file_browser.file_browser({ cwd = vim.fn.expand('%:p:h') })<cr>",
+	{ noremap = true, silent = true })
+
+
+
+vim.keymap.set("x", "<S-k>", "gc", { remap = true, silent = true })
+vim.keymap.set("x", "f", "=", { remap = true, silent = true })
+
+
 
 -- Select the current word (search (backward))
 -- keymap.set('n', '<leader>ss', '#', opts)
