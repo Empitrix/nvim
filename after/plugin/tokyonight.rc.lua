@@ -8,7 +8,7 @@ tokyonight.setup({
 	terminal_colors = true,
 	styles = {
 		comments = { italic = false, bold = false },
-		keywords = { italic = true, bold = false },
+		keywords = { italic = false, bold = false },
 		functions = {},
 		variables = {},
 		sidebars = "dark",
