@@ -1,6 +1,8 @@
 ---@diagnostic disable: undefined-global
-local status, nvim_lsp = pcall(require, 'lspconfig')
-if (not status) then return end
+-- local status, nvim_lsp = pcall(require, 'lspconfig')
+-- if (not status) then return end
+
+local nvim_lsp = vim.lsp
 
 -- Loading flutter-tools
 local status_flt, flutter_tools = pcall(require, 'flutter-tools')
@@ -38,18 +40,18 @@ capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 
 
 -- HTML
-nvim_lsp.emmet_language_server.setup {
+nvim_lsp.config("emmet_language_server", {
 	capabilities = capabilities,
 	filetypes = { "html", "htmldjango" },
-}
+})
 
 -- CSS
-nvim_lsp.cssls.setup {
+nvim_lsp.config("cssls", {
 	capabilities = capabilities,
-}
+})
 
 -- Rust
-nvim_lsp.rust_analyzer.setup {
+nvim_lsp.config("rust_analyzer", {
 	settings = {
 		['rust-analyzer'] = {
 			diagnostics = {
@@ -57,19 +59,19 @@ nvim_lsp.rust_analyzer.setup {
 			},
 		}
 	}
-}
+})
 
 
 -- Python
-nvim_lsp.pyright.setup {
+nvim_lsp.config("pyright", {
 	capabilities = capabilities,
 	filetypes = { "python" },
 	cmd = { 'pyright-langserver', '--stdio' },
-}
+})
 
 
 -- Lua
-nvim_lsp.lua_ls.setup {
+nvim_lsp.config("lua_ls", {
 	on_attach = on_attach,
 	settings = {
 		Lua = {
@@ -82,7 +84,7 @@ nvim_lsp.lua_ls.setup {
 			}
 		}
 	}
-}
+})
 
 
 -- Flutter
@@ -95,36 +97,36 @@ flutter_tools.setup {
 
 
 -- Java
-nvim_lsp.jdtls.setup {
+nvim_lsp.config("jdtls", {
 	capabilities = capabilities,
-}
+})
 
 
 -- Kotlin
-nvim_lsp.kotlin_language_server.setup {
+nvim_lsp.config("kotlin_language_server", {
 	capabilities = capabilities,
 	-- root_dir = nvim_lsp.util.root_pattern('*.kt'),
-}
+})
 
 
--- Swift
-nvim_lsp.sourcekit.setup {
+-- -- Swift
+-- nvim_lsp.config("sourcekit", {
+-- 	capabilities = capabilities,
+-- 	filetypes = { "swift" },
+-- 	root_dir = nvim_lsp.util.root_pattern('*.swift'),
+-- })
+
+
+-- C/C+
+nvim_lsp.config("clangd", {
 	capabilities = capabilities,
-	filetypes = { "swift" },
-	root_dir = nvim_lsp.util.root_pattern('*.swift'),
-}
-
-
--- C/C++
-nvim_lsp.clangd.setup {
-	capabilities = capabilities,
-}
+})
 
 
 -- CMake
-nvim_lsp.cmake.setup {
+nvim_lsp.config("cmake", {
 	capabilities = capabilities,
-}
+})
 
 
 -- Apply icons
