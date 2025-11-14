@@ -129,24 +129,68 @@ nvim_lsp.config("cmake", {
 })
 
 
--- Apply icons
-local signs = { Error = '󰅙 ', Warn = ' ', Hint = ' ', Info = ' ' }
-for type, icon in pairs(signs) do
-	local hl = 'DiagnosticSign' .. type
-	vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = '' })
-end
+vim.lsp.enable("emmet_language_server")
+vim.lsp.enable("cssls")
+vim.lsp.enable("rust_analyzer")
+vim.lsp.enable("pyright")
+vim.lsp.enable("lua_ls")
+vim.lsp.enable("clangd")
+vim.lsp.enable("cmake")
+vim.lsp.enable("jdtls")
+vim.lsp.enable("kotlin_language_server")
 
+
+
+-- ======= diagnostic sign config — put this at the top of init.lua (very early) ========
+local diagnostic_signs = {
+  [vim.diagnostic.severity.ERROR] = "󰅙 ",
+  [vim.diagnostic.severity.WARN]  = " ",
+  [vim.diagnostic.severity.HINT]  = " ",
+  [vim.diagnostic.severity.INFO]  = " ",
+}
 
 vim.diagnostic.config({
-	virtual_text = {
-		prefix = "  ",
-	},
-	signs = true,
-	update_in_insert = false, -- Good for performance
-	underline = true,
-	float = {
-		header = "",
-		border = 'rounded',
-		focusable = true,
-	}
+  -- set the signs *by severity* so internal code doesn't call sign_define()
+  signs = {
+    -- 'text' uses severity keys (not string keys)
+    text = diagnostic_signs,
+    -- optional: numhl/linehl tables if you want them
+  },
+
+  -- keep your other preferred diagnostic settings
+  virtual_text = { prefix = "  " },
+  update_in_insert = false,
+  underline = true,
+  float = { header = "", border = "rounded", focusable = true },
 })
+-- optionally tweak highlight groups (use nvim_set_hl, not sign_define)
+vim.api.nvim_set_hl(0, "DiagnosticSignError", { fg = "#F44747" })
+vim.api.nvim_set_hl(0, "DiagnosticSignWarn",  { fg = "#FF8800" })
+vim.api.nvim_set_hl(0, "DiagnosticSignInfo",  { fg = "#2BA7FF" })
+vim.api.nvim_set_hl(0, "DiagnosticSignHint",  { fg = "#10B981" })
+-- =====================================================================================
+
+
+
+-- -- Apply icons
+-- local signs = { Error = '󰅙 ', Warn = ' ', Hint = ' ', Info = ' ' }
+-- for type, icon in pairs(signs) do
+-- 	local hl = 'DiagnosticSign' .. type
+-- 	vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = '' })
+-- end
+--
+--
+--
+-- vim.diagnostic.config({
+-- 	virtual_text = {
+-- 		prefix = "  ",
+-- 	},
+-- 	signs = true,
+-- 	update_in_insert = false, -- Good for performance
+-- 	underline = true,
+-- 	float = {
+-- 		header = "",
+-- 		border = 'rounded',
+-- 		focusable = true,
+-- 	}
+-- })
